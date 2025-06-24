@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Inter (default Tailwind font) or another academic font like Georgia/Times New Roman -->
+    <!-- For a more academic feel, you might consider a serif font. For simplicity with Tailwind, Inter is good. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles not easily done with Tailwind or for specific overrides */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter, Tailwind's default */
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px; /* Max width for content */
+        }
+        /* Hide Chinese content by default (JavaScript will manage visibility) */
+        .lang-zh {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gray-800 text-white py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">
+                <span class="lang-en">Your Name</span>
+                <span class="lang-zh">你的名字</span>
+            </h1>
+            <nav class="flex items-center space-x-6">
+                <ul class="flex space-x-6">
+                    <li>
+                        <a href="#home" class="hover:text-blue-300 transition-colors duration-200">
+                            <span class="lang-en">Home</span>
+                            <span class="lang-zh">主页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cv" class="hover:text-blue-300 transition-colors duration-200">
+                            <span class="lang-en">CV</span>
+                            <span class="lang-zh">简历</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#publications" class="hover:text-blue-300 transition-colors duration-200">
+                            <span class="lang-en">Publications</span>
+                            <span class="lang-zh">出版物</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#research" class="hover:text-blue-300 transition-colors duration-200">
+                            <span class="lang-en">Research</span>
+                            <span class="lang-zh">研究</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-blue-300 transition-colors duration-200">
+                            <span class="lang-en">Contact</span>
+                            <span class="lang-zh">联系</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="language-switcher flex space-x-2">
+                    <button id="lang-en-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">English</button>
+                    <button id="lang-zh-btn" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">中文</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="home" class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+                <span class="lang-en">Welcome</span>
+                <span class="lang-zh">欢迎</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <img src="https://placehold.co/200x200/cccccc/333333?text=Your+Photo" alt="Your Name" class="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 shadow-lg">
+                <div>
+                    <p class="text-lg mb-4">
+                        <span class="lang-en">Welcome to my personal academic website. I am a <span class="font-semibold">[Your Field]</span> researcher at <span class="font-semibold">[Your Institution]</span>. My work focuses on <span class="font-semibold">[briefly describe your research area, e.g., artificial intelligence, renewable energy, computational linguistics]</span>.</span>
+                        <span class="lang-zh">欢迎来到我的个人学术网站。我是<span class="font-semibold">[你的领域]</span>研究员，就职于<span class="font-semibold">[你的机构]</span>。我的研究方向是<span class="font-semibold">[简要描述你的研究领域，例如：人工智能、可再生能源、计算语言学]</span>。</span>
+                    </p>
+                    <p class="text-md text-gray-600">
+                        <span class="lang-en">Here you can find information about my research, publications, and professional background.</span>
+                        <span class="lang-zh">您可以在这里找到关于我的研究、出版物和专业背景的信息。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+                <span class="lang-en">Curriculum Vitae (CV)</span>
+                <span class="lang-zh">简历</span>
+            </h2>
+            <p class="mb-6">
+                <span class="lang-en">You can download my full CV here: <a href="your_cv.pdf" target="_blank" class="text-blue-600 hover:underline font-medium">Download CV (PDF)</a></span>
+                <span class="lang-zh">你可以在这里下载我的完整简历：<a href="your_cv.pdf" target="_blank" class="text-blue-600 hover:underline font-medium">下载简历 (PDF)</a></span>
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-3 text-gray-700">
+                <span class="lang-en">Education</span>
+                <span class="lang-zh">教育背景</span>
+            </h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>
+                    <span class="lang-en">Ph.D. in <span class="font-medium">[Your Field]</span>, <span class="font-medium">[Your University]</span>, <span class="font-medium">[Year]</span></span>
+                    <span class="lang-zh">博士，<span class="font-medium">[你的领域]</span>，<span class="font-medium">[你的大学]</span>，<span class="font-medium">[年份]</span></span>
+                </li>
+                <li>
+                    <span class="lang-en">M.Sc. in <span class="font-medium">[Your Field]</span>, <span class="font-medium">[Your University]</span>, <span class="font-medium">[Year]</span></span>
+                    <span class="lang-zh">硕士，<span class="font-medium">[你的领域]</span>，<span class="font-medium">[你的大学]</span>，<span class="font-medium">[年份]</span></span>
+                </li>
+                <li>
+                    <span class="lang-en">B.Sc. in <span class="font-medium">[Your Field]</span>, <span class="font-medium">[Your University]</span>, <span class="font-medium">[Year]</span></span>
+                    <span class="lang-zh">学士，<span class="font-medium">[你的领域]</span>，<span class="font-medium">[你的大学]</span>，<span class="font-medium">[年份]</span></span>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-3 text-gray-700">
+                <span class="lang-en">Experience</span>
+                <span class="lang-zh">工作经历</span>
+            </h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>
+                    <span class="lang-en">Postdoctoral Researcher, <span class="font-medium">[Your Institution]</span>, <span class="font-medium">[Start Year]</span> - Present</span>
+                    <span class="lang-zh">博士后研究员，<span class="font-medium">[你的机构]</span>，<span class="font-medium">[开始年份]</span> - 至今</span>
+                </li>
+                <li>
+                    <span class="lang-en">Research Assistant, <span class="font-medium">[Your Institution]</span>, <span class="font-medium">[Start Year]</span> - <span class="font-medium">[End Year]</span></span>
+                    <span class="lang-zh">研究助理，<span class="font-medium">[你的机构]</span>，<span class="font-medium">[开始年份]</span> - <span class="font-medium">[结束年份]</span></span>
+                </li>
+            </ul>
+            <!-- Add more CV details as needed, following the lang-en/lang-zh pattern -->
+        </section>
+
+        <section id="publications" class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+                <span class="lang-en">Publications</span>
+                <span class="lang-zh">出版物</span>
+            </h2>
+            <ul class="space-y-6">
+                <li>
+                    <span class="lang-en">
+                        <p class="font-semibold text-lg">[Year]</p>
+                        <p>Author A, Author B, <strong class="text-blue-700">Your Name</strong>. "<span class="font-bold">Title of Publication One</span>." <em>Journal Name</em>, Volume(Issue): Pages.
+                        <a href="https://example.com/pub1.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[Link to paper]</a></p>
+                    </span>
+                    <span class="lang-zh">
+                        <p class="font-semibold text-lg">[年份]</p>
+                        <p>作者A，作者B，<strong class="text-blue-700">你的名字</strong>。《<span class="font-bold">出版物一标题</span>》。《期刊名称》，卷(期)：页码。
+                        <a href="https://example.com/pub1.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[论文链接]</a></p>
+                    </span>
+                </li>
+                <li>
+                    <span class="lang-en">
+                        <p class="font-semibold text-lg">[Year]</p>
+                        <p><strong class="text-blue-700">Your Name</strong>, Author C, Author D. "<span class="font-bold">Title of Publication Two</span>." <em>Conference Proceedings</em>, Pages.
+                        <a href="https://example.com/pub2.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[Link to paper]</a></p>
+                    </span>
+                    <span class="lang-zh">
+                        <p class="font-semibold text-lg">[年份]</p>
+                        <p><strong class="text-blue-700">你的名字</strong>，作者C，作者D。《<span class="font-bold">出版物二标题</span>》。《会议论文集》，页码。
+                        <a href="https://example.com/pub2.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[论文链接]</a></p>
+                    </span>
+                </li>
+                <!-- Add more publications here following the same structure -->
+                <li>
+                    <span class="lang-en">
+                        <p class="font-semibold text-lg">[Year]</p>
+                        <p>Author E, <strong class="text-blue-700">Your Name</strong>, Author F. "<span class="font-bold">Title of Publication Three</span>." <em>Book Chapter in Edited Volume</em>, Publisher.
+                        <a href="https://example.com/pub3.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[Link to chapter]</a></p>
+                    </span>
+                    <span class="lang-zh">
+                        <p class="font-semibold text-lg">[年份]</p>
+                        <p>作者E，<strong class="text-blue-700">你的名字</strong>，作者F。《<span class="font-bold">出版物三标题</span>》。《编辑卷中的章节》，出版商。
+                        <a href="https://example.com/pub3.pdf" target="_blank" class="text-blue-600 hover:underline ml-2">[章节链接]</a></p>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="research" class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+                <span class="lang-en">Research Interests</span>
+                <span class="lang-zh">研究兴趣</span>
+            </h2>
+            <p class="mb-4">
+                <span class="lang-en">My research interests include:</span>
+                <span class="lang-zh">我的研究兴趣包括：</span>
+            </p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>
+                    <span class="lang-en">Topic 1: Detailed description of your first research topic.</span>
+                    <span class="lang-zh">主题 1：你的第一个研究主题的详细描述。</span>
+                </li>
+                <li>
+                    <span class="lang-en">Topic 2: Detailed description of your second research topic.</span>
+                    <span class="lang-zh">主题 2：你的第二个研究主题的详细描述。</span>
+                </li>
+                <li>
+                    <span class="lang-en">Topic 3: Detailed description of your third research topic.</span>
+                    <span class="lang-zh">主题 3：你的第三个研究主题的详细描述。</span>
+                </li>
+            </ul>
+            <p class="mt-4 text-gray-600">
+                <span class="lang-en">I am passionate about exploring innovative solutions in these areas and contributing to the academic community.</span>
+                <span class="lang-zh">我热衷于探索这些领域的创新解决方案，并为学术界做出贡献。</span>
+            </p>
+        </section>
+
+        <section id="contact" class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+                <span class="lang-en">Contact</span>
+                <span class="lang-zh">联系</span>
+            </h2>
+            <p class="mb-2">
+                <span class="lang-en">Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></span>
+                <span class="lang-zh">电子邮件: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></span>
+            </p>
+            <p class="mb-2">
+                <span class="lang-en">Office: <span class="font-medium">[Your Office Location/Address]</span></span>
+                <span class="lang-zh">办公室: <span class="font-medium">[你的办公室位置/地址]</span></span>
+            </p>
+            <p class="mb-2">
+                <span class="lang-en">Find me on:</span>
+                <span class="lang-zh">在以下平台找到我：</span>
+            </p>
+            <ul class="list-disc list-inside space-y-1">
+                <li><a href="https://scholar.google.com/citations?user=your_google_scholar_id" target="_blank" class="text-blue-600 hover:underline">Google Scholar</a></li>
+                <li><a href="https://orcid.org/your_orcid_id" target="_blank" class="text-blue-600 hover:underline">ORCID</a></li>
+                <li><a href="https://www.linkedin.com/in/your_linkedin_profile" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a></li>
+                <!-- Add more academic profiles as needed -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-6 mt-8">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="current-year"></span>
+                <span class="lang-en">Your Name. All rights reserved.</span>
+                <span class="lang-zh">你的名字。保留所有权利。</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

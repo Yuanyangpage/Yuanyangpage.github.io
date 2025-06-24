@@ -1,0 +1,13 @@
+/*
+ * This style.css file is intentionally minimal as most styling is handled by Tailwind CSS utility classes directly in the HTML.
+ * Use this file for any custom overrides or styles that are difficult to achieve with Tailwind alone.
+ */
+
+/* No specific CSS rules are added here as all styling is done inline with Tailwind. */
+/* However, if you need to add custom fonts not handled by default Tailwind setup, or very specific global overrides,
+   you would add them here. For example: */
+/*
+body {
+    font-family: 'Times New Roman', serif;
+}
+*/
