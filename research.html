@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuanyang Xie - Academic Personal Page</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for an academic look and better readability */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text */
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px; /* Adjust padding to apply to inner sections */
+        }
+        header {
+            background-color: #ffffff; /* Fallback for header background */
+            border-bottom: 1px solid #e2e8f0; /* Light border */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+            display: flex;
+            flex-direction: column; /* Stack top and bottom areas vertically */
+            align-items: center;
+        }
+
+        /* Top area of the header with background image and name/title */
+        .header-top-area {
+            width: 100%;
+            padding: 40px 20px; /* Vertical padding to give height */
+            background-image: url('bg.jpg'); /* Placeholder image: Academic Background */
+            background-size: cover;
+            background-position: center;
+            position: relative; /* For the overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Hide any overflow from image */
+        }
+        /* Overlay for background image to improve text readability */
+        .header-top-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 82, 130, 0.7); /* Dark blue overlay with transparency */
+            z-index: 0; /* Behind content */
+        }
+        .header-top-area .content-wrapper {
+            position: relative;
+            z-index: 1; /* Ensure content is above overlay */
+            color: #ffffff; /* White text for content on background */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* Text shadow for better readability */
+        }
+        .header-top-area h1 {
+            font-size: 3rem; /* Larger font size for name */
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .header-top-area p { /* For title/affiliation under name */
+            font-size: 1.25rem;
+            margin-bottom: 0; /* Remove default margin */
+        }
+
+        /* Bottom area of the header with navigation and language switcher */
+        .header-bottom-area {
+            width: 100%;
+            background-color: #ffffff; /* White background for this section */
+            padding: 15px 20px; /* Padding for nav and switcher */
+            text-align: center; /* Center the nav and switcher */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow beneath header */
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+            position: relative; /* For dropdown positioning */
+        }
+        nav ul li a {
+            color: #4a5568; /* Darker gray navigation links */
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            display: inline-block; /* Ensure padding works */
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: #2c5282; /* Darker blue on hover/active */
+            border-bottom: 2px solid #2c5282;
+        }
+        section {
+            background-color: #ffffff;
+            padding: 40px;
+            margin-top: 30px;
+            border-radius: 8px; /* Rounded corners for sections */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2c5282; /* Blue headings */
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #edf2f7; /* Light separator */
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #4a5568; /* Darker gray subheadings */
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #3182ce; /* Blue links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Circular photo */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #cbd5e0; /* Light border around photo */
+        }
+        .lang-switcher {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .lang-switcher button {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .lang-switcher button.active, .lang-switcher button:hover {
+            background-color: #2c5282;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            color: #6c757d;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* Dropdown specific styles */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%; /* Position below the parent link */
+            left: 50%;
+            transform: translateX(-50%); /* Center the dropdown */
+            min-width: 180px; /* Ensure enough width for content */
+            list-style: none; /* Remove list bullets */
+            padding: 0;
+            margin-top: 5px; /* Space between nav link and dropdown */
+            background-color: #ffffff; /* White background for dropdown */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            overflow: hidden; /* Ensures rounded corners on children */
+            display: none; /* Hidden by default */
+            z-index: 20; /* Ensure dropdown is above other content */
+        }
+        .dropdown-menu li {
+            margin: 0; /* Remove default list item margin for dropdown items */
+        }
+        .dropdown-menu a {
+            color: #4a5568; /* Dropdown link color */
+            padding: 10px 15px; /* Padding for dropdown items */
+            display: block; /* Make the whole area clickable */
+            white-space: nowrap; /* Prevent text wrapping */
+            transition: background-color 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f0f4f8; /* Light gray background on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+        .nav-link .arrow {
+            font-size: 0.7em; /* Smaller arrow */
+            vertical-align: middle;
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+            display: inline-block; /* To allow transform */
+        }
+        /* Rotate arrow on hover */
+        .nav-item.show-dropdown .nav-link .arrow { /* Changed to use JS controlled class */
+            transform: rotate(180deg);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .header-top-area h1 {
+                font-size: 2.25rem;
+            }
+            .header-top-area p {
+                font-size: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px; /* Adjust spacing */
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            nav ul li a {
+                padding: 5px 0;
+            }
+            .lang-switcher {
+                text-align: center;
+                margin-top: 10px;
+            }
+            section {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            /* Adjust dropdown for small screens */
+            .dropdown-menu {
+                left: 0;
+                right: 0;
+                transform: translateX(0);
+                min-width: unset;
+                width: 100%; /* Full width dropdown on small screens */
+                border-radius: 0;
+            }
+        }
+
+        /* Specific style for Recent Publications section on Home page */
+        #home .recent-publications {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #edf2f7;
+        }
+        #home .recent-publications ul {
+            max-height: 300px; /* Limit height for scroll effect */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding-right: 15px; /* Space for scrollbar */
+            margin-left: 0; /* Reset default list margin */
+            list-style: none; /* Remove default list bullets */
+        }
+        #home .recent-publications li {
+            background-color: #f0f4f8; /* Light background for each publication */
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        #home .recent-publications li:hover {
+            transform: translateY(-3px); /* Subtle lift effect on hover */
+        }
+        #home .recent-publications li p {
+            margin-bottom: 5px; /* Reduce margin for text within list item */
+        }
+        #home .recent-publications li em {
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top-area">
+            <div class="content-wrapper">
+                <h1 class="font-extrabold">Yuanyang Xie</h1>
+                <p class="font-medium">Research Associate at Physcis Department, King's College London</p>
+            </div>
+        </div>
+        <div class="header-bottom-area container">
+            <nav class="mt-4">
+                <ul class="flex justify-center space-x-6">
+                    <!-- Home -->
+                    <li class="nav-item group">
+                        <a href="index.html" class="nav-link" data-lang="en">Home</a><a href="index.html" class="nav-link" data-lang="zh" style="display:none;">首页</a>
+                    </li>
+                    <!-- CV -->
+                    <li class="nav-item group">
+                        <a href="CV.html" class="nav-link" data-lang="en">CV <span class="arrow">&#9662;</span></a>
+                        <a href="CV.html" class="nav-link" data-lang="zh" style="display:none;">简历 <span class="arrow">&#9662;</span></a>
+                    </li>
+                    <!-- Publications -->
+                    <li class="nav-item group">
+                        <a href="publications.html" class="nav-link" data-lang="en">Publications <span class="arrow">&#9662;</span></a>
+                        <a href="publications.html" class="nav-link" data-lang="zh" style="display:none;">出版物 <span class="arrow">&#9662;</span></a>
+                    </li>
+                    <!-- Research -->
+                    <li class="nav-item group">
+                        <a href="#research" class="nav-link" data-lang="en">Research <span class="arrow">&#9662;</span></a>
+                        <a href="#research" class="nav-link" data-lang="zh" style="display:none;">研究 <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#research-overview" class="block px-4 py-2 hover:bg-gray-100" data-lang="en">Overview</a><a href="#research-overview" class="block px-4 py-2 hover:bg-gray-100" data-lang="zh" style="display:none;">概述</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!-- Contact -->
+                    <li class="nav-item group">
+                        <a href="contact.html" class="nav-link" data-lang="en">Contact</a><a href="contact.html" class="nav-link" data-lang="zh" style="display:none;">联系方式</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-switcher mt-4">
+                <button id="lang-en" class="px-4 py-2 rounded-md active">English</button>
+                <button id="lang-zh" class="px-4 py-2 rounded-md">中文</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+	
+        <section id="research">
+            <h2 class="font-semibold" data-lang="en">Research Interests</h2>
+            <h2 class="font-semibold" data-lang="zh" style="display:none;">研究兴趣</h2>
+            <p data-lang="en" class="mb-4">My research endeavors are primarily focused on the optical performance of heterogeneous plasmonics and chiral plasmonics, especially the plasmonic gold nanostructures. I have experience in plasmonics nanostructure fabrications, photocatalysis, electromagnetic numerical simulations, Fourier microscopy measurements and pump-probe measurements, and I am personally interested in the chiral light-matter interactions of plasmonics and its applications in photocatalysis.</p>
+            <p data-lang="zh" style="display:none;" class="mb-4">My research endeavors are primarily focused on the optical performance of heterogeneous plasmonics and chiral plasmonics, especially the plasmonic gold nanostructures. I have experience in plasmonics nanostructure fabrications, photocatalysis, electromagnetic numerical simulations, Fourier microscopy measurements and pump-probe measurements, and I am personally interested in the chiral light-matter interactions of plasmonics and its applications in photocatalysis.</p>
+
+            <h3 id="research-overview" class="font-medium"><span data-lang="en">Overview of Research Areas</span><span data-lang="zh" style="display:none;">研究领域概述</span></h3>
+            <ul class="list-disc ml-6 mb-4">
+                <li class="mb-1" data-lang="en"><strong>Chiral photonics:</strong> Developing chiral responses in nanophotonic regime.</li>
+                <li class="mb-1" data-lang="zh" style="display:none;"><strong>手性光子学：</strong> 在纳米光子学领域拓展手性特征的研究。</li>
+                <li class="mb-1" data-lang="en"><strong>Heterogeneous plasmonics:</strong> Focusing on the combination between materials to improve the optical properties.</li>
+                <li class="mb-1" data-lang="zh" style="display:none;"><strong>异质表面等离激元：</strong> 专注于构建复杂结构进而改进光学性能。</li>
+                <li class="mb-1" data-lang="en"><strong>Chiral photocatalysis:</strong> Investigating the role of chirality in the photocatalysis.</li>
+                <li class="mb-1" data-lang="zh" style="display:none;"><strong>手性光催化：</strong> 研究手性在光催化中的作用。</li>
+                
+            </ul>
+
+
+    </main>
+
+    <footer class="mt-8 text-gray-600 text-sm">
+        <p data-lang="en">&copy; <span id="current-year-en"></span> Yuanyang Xie. All rights reserved.</p>
+        <p data-lang="zh" style="display:none;">&copy; <span id="current-year-zh"></span> 谢远扬。版权所有。</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langEnBtn = document.getElementById('lang-en');
+            const langZhBtn = document.getElementById('lang-zh');
+            const allLangElements = document.querySelectorAll('[data-lang]');
+            const navLinksEn = document.querySelectorAll('nav .nav-link[data-lang="en"]');
+            const navLinksZh = document.querySelectorAll('nav .nav-link[data-lang="zh"]');
+            const currentYearEn = document.getElementById('current-year-en');
+            const currentYearZh = document.getElementById('current-year-zh');
+            const navItemsWithDropdown = document.querySelectorAll('.nav-item.group'); // Select all nav items that can have dropdowns
+
+            // Variable to store the timeout ID
+            let dropdownHideTimeout;
+            const HIDE_DELAY = 300; // milliseconds before hiding dropdown
+
+            // Set current year dynamically
+            const year = new Date().getFullYear();
+            if (currentYearEn) currentYearEn.textContent = year;
+            if (currentYearZh) currentYearZh.textContent = year;
+
+            // Function to set the language
+            const setLanguage = (lang) => {
+                allLangElements.forEach(el => {
+                    // Check if the element has data-lang attribute and matches current language
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = ''; // Show element
+                    } else if (el.hasAttribute('data-lang')) {
+                        // Hide elements that have data-lang but don't match the current language
+                        el.style.display = 'none';
+                    }
+                });
+
+                // Handle active state for language buttons
+                if (lang === 'en') {
+                    langEnBtn.classList.add('active');
+                    langZhBtn.classList.remove('active');
+                } else {
+                    langZhBtn.classList.add('active');
+                    langEnBtn.classList.remove('active');
+                }
+
+                // Update navigation links for proper display (main links)
+                navLinksEn.forEach(link => {
+                    link.style.display = (lang === 'en') ? 'inline-block' : 'none'; // Use inline-block for proper spacing
+                });
+                navLinksZh.forEach(link => {
+                    link.style.display = (lang === 'zh') ? 'inline-block' : 'none';
+                });
+
+                // Update the lang attribute of the html tag
+                document.documentElement.lang = lang;
+            };
+
+            // Event listeners for language buttons
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+            langZhBtn.addEventListener('click', () => setLanguage('zh'));
+
+            // Set initial language to English
+            setLanguage('en');
+
+            // --- Dropdown hover logic with delay ---
+            navItemsWithDropdown.forEach(navItem => {
+                const dropdownMenu = navItem.querySelector('.dropdown-menu');
+
+                if (dropdownMenu) { // Only add listeners if a dropdown menu exists
+                    // Show dropdown on mouseover
+                    navItem.addEventListener('mouseover', () => {
+                        clearTimeout(dropdownHideTimeout); // Clear any pending hide timeout
+                        dropdownMenu.style.display = 'block';
+                        navItem.classList.add('show-dropdown'); // Add class to rotate arrow
+                    });
+
+                    // Hide dropdown on mouseout with a delay
+                    navItem.addEventListener('mouseout', () => {
+                        dropdownHideTimeout = setTimeout(() => {
+                            dropdownMenu.style.display = 'none';
+                            navItem.classList.remove('show-dropdown'); // Remove class to reset arrow
+                        }, HIDE_DELAY);
+                    });
+
+                    // If mouse enters the dropdown itself, clear the hide timeout
+                    dropdownMenu.addEventListener('mouseover', () => {
+                        clearTimeout(dropdownHideTimeout);
+                    });
+
+                    // If mouse leaves the dropdown, start the hide timeout again
+                    dropdownMenu.addEventListener('mouseout', () => {
+                        dropdownHideTimeout = setTimeout(() => {
+                            dropdownMenu.style.display = 'none';
+                            navItem.classList.remove('show-dropdown');
+                        }, HIDE_DELAY);
+                    });
+                }
+            });
+
+            // Smooth scrolling for navigation links (main and dropdown)
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Prevent default anchor click behavior only for internal links
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start' // Scroll to the top of the section
+                            });
+                        }
+
+                        // Close dropdown after clicking a link within it (optional, but good UX)
+                        const parentDropdown = this.closest('.dropdown-menu');
+                        if (parentDropdown) {
+                            parentDropdown.style.display = 'none';
+                            parentDropdown.closest('.nav-item.group').classList.remove('show-dropdown');
+                            clearTimeout(dropdownHideTimeout); // Ensure no lingering hide timeout
+                        }
+
+                        // Optional: update active class on main nav links
+                        document.querySelectorAll('nav .nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        // Add active class to the parent main nav link
+                        let currentNavLink = this;
+                        // If it's a dropdown item, find its parent main nav link
+                        while (currentNavLink && !currentNavLink.classList.contains('nav-link')) {
+                            const closestNavItem = currentNavLink.closest('.nav-item');
+                            currentNavLink = closestNavItem ? closestNavItem.querySelector('.nav-link') : null;
+                        }
+                        if (currentNavLink) {
+                            currentNavLink.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // Set initial active nav link based on URL hash or default to Home
+            const initialHash = window.location.hash || '#home';
+            // Find the main nav link that corresponds to the initial hash
+            const initialActiveMainLink = document.querySelector(`nav .nav-link[href="${initialHash}"][data-lang="en"]`) ||
+                                          document.querySelector(`nav .nav-link[href="${initialHash}"][data-lang="zh"]`);
+
+            if (initialActiveMainLink) {
+                initialActiveMainLink.classList.add('active');
+            } else {
+                // If the hash points to a sub-section (e.g., #cv-education), activate its parent main link (#cv)
+                const mainSectionId = initialHash.split('-')[0]; // e.g., '#cv-education' -> '#cv'
+                const parentMainLink = document.querySelector(`nav .nav-link[href="${mainSectionId}"][data-lang="en"]`) ||
+                                       document.querySelector(`nav .nav-link[href="${mainSectionId}"][data-lang="zh"]`);
+                if (parentMainLink) {
+                    parentMainLink.classList.add('active');
+                } else {
+                    document.querySelector('nav .nav-link[href="#home"][data-lang="en"]').classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
