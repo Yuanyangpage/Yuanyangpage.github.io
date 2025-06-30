@@ -305,12 +305,16 @@
                 <ul class="flex justify-center space-x-6">
                     <!-- Home -->
                     <li class="nav-item group">
-                        <a href="#home" class="nav-link" data-lang="en">Home</a><a href="#home" class="nav-link" data-lang="zh" style="display:none;">首页</a>
+                        <a href="index.html" class="nav-link" data-lang="en">Home</a><a href="index.html" class="nav-link" data-lang="zh" style="display:none;">首页</a>
                     </li>
                     <!-- CV -->
                     <li class="nav-item group">
-                        <a href="CV.html" class="nav-link" data-lang="en">CV <span class="arrow">&#9662;</span></a>
-                        <a href="CV.html" class="nav-link" data-lang="zh" style="display:none;">简历 <span class="arrow">&#9662;</span></a>
+                        <a href="#cv" class="nav-link" data-lang="en">CV <span class="arrow">&#9662;</span></a>
+                        <a href="#cv" class="nav-link" data-lang="zh" style="display:none;">简历 <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#cv-education" class="block px-4 py-2 hover:bg-gray-100" data-lang="en">Education</a><a href="#cv-education" class="block px-4 py-2 hover:bg-gray-100" data-lang="zh" style="display:none;">教育背景</a></li>
+                            <li><a href="#cv-experience" class="block px-4 py-2 hover:bg-gray-100" data-lang="en">Work Experience</a><a href="#cv-experience" class="block px-4 py-2 hover:bg-gray-100" data-lang="zh" style="display:none;">工作经验</a></li>
+                        </ul>
                     </li>
                     <!-- Publications -->
                     <li class="nav-item group">
@@ -343,55 +347,45 @@
             <p data-lang="en" class="mb-4 text-lg">Welcome to my academic personal page. I am a <strong class="text-blue-700">Research Associate</strong> at <strong class="text-blue-700">King's College London</strong>. My research focuses on <span class="font-medium">Nanoplasmonics</span> with a keen interest in <span class="font-medium">chiral photonics</span> and <span class="font-medium">heterogeneous nanostructures</span>. Feel free to explore my work and connect!</p>
             <p data-lang="zh" style="display:none;" class="mb-4 text-lg">欢迎来到我的学术个人主页。我是<strong class="text-blue-700">博士后研究员</strong>，在<strong class="text-blue-700">伦敦国王学院</strong>工作。我的研究主要集中在<span class="font-medium">纳米表面等离激元</span>，并对<span class="font-medium">手性光子学</span>和<span class="font-medium">异质纳米结构</span>有浓厚兴趣。欢迎浏览我的工作并与我联系！</p>
 
-            <div class="recent-publications">
-                <h3 class="font-medium" data-lang="en">Recent Publications</h3>
-                <h3 class="font-medium" data-lang="zh" style="display:none;">近期出版物</h3>
-                <ul>
+		</section>
+
+        <section id="cv">
+            <h2 class="font-semibold" data-lang="en">Curriculum Vitae (CV)</h2>
+            <h2 class="font-semibold" data-lang="zh" style="display:none;">简历</h2>
+            <p data-lang="en" class="mb-4">This section provides an overview of my academic and professional journey. For a detailed version, please download my CV <a href="your-cv.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">here</a>.</p>
+            <p data-lang="zh" style="display:none;" class="mb-4">本节概述了我的学术和职业历程。如需详细版本，请<a href="your-cv.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">点击此处</a>下载我的简历。</p>
+
+            <h3 id="cv-education" class="font-medium"><span data-lang="en">Education</span><span data-lang="zh" style="display:none;">教育背景</span></h3>
+            <ul class="list-disc ml-6">
                 <li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Alexey V. Krasavin, Diane J. Roth, Anatoly V. Zayats. "Unidirectional Chiral Scattering from Single Enantiomeric Plasmonic Plasmonic Nanoparticles." <em>Nature Communications</em>, 2025, 16(1):1125. <a href="paper/nc2025chiralscattering.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
+                    <p><strong><span data-lang="en">Ph.D. in Physics</span><span data-lang="zh" style="display:none;">博士 (物理学)</span></strong><br>
+                    <span data-lang="en">King's College London, London, United Kingdom</span><span data-lang="zh" style="display:none;">伦敦国王学院, 伦敦, 英国</span>, [2020 - 2024]<br>
+                    <span data-lang="en">Dissertation: "Optical properties of plasmonic heterogeneous nanostructures"</span><span data-lang="zh" style="display:none;">论文题目: "表面等离子纳米异质结的光学性能研究"</span></p>
                 </li>
                 <li class="mb-2">
-                    <p>Anton Yu. Bykov, <strong>Yuanyang Xie</strong>,  Alexey V. Krasavin†, Anatoly V. Zayats. "Broadband Transient Response and Wavelength-Tunable Photoacoustics in Plasmonic Hetero-nanoparticles." <em>Nano Letters</em>, 2023, 23(7):2786-2791. <a href="paper/acs.nanolett.2023acoustic.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
+                    <p><strong><span data-lang="en">M.Sc. in Environmental Engineering </span><span data-lang="zh" style="display:none;">硕士 (环境工程)</span></strong><br>
+                    <span data-lang="en">Chongqing Institute of Green and Intelligent Technology，Chinese Academy of Science, Chongqing, China</span><span data-lang="zh" style="display:none;">中国科学院重庆绿色智能技术研究院, 重庆, 中国</span>, [2016 - 2019]</p>
                 </li>
                 <li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Jiye Li, Jiangling Wu. "A Trigger-based Aggregation of Aptamer-functionalized Gold nanoparticles for Colorimetry: An Example on Detection of Escherichia Coli O157: H7." <em>Sensors and Actuators B: Chemical</em>, 2021, 339: 129865. <a href="paper/Ecoli157.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
+                    <p><strong><span data-lang="en">B.Sc. in Environmental Science</span><span data-lang="zh" style="display:none;">学士 (环境 科学)</span></strong><br>
+                    <span data-lang="en">Northwest University, Xi'an, China</span> <span data-lang="zh" style="display:none;">西北大学, 西安, 中国</span>, [2012 - 2016]</p>
                 </li>
-				<li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Dongyun Tang, Hongliang Cui, Lizhu Yang, Haiyan Cao, Wen Yun. "Sensitive Colorimetric Detection for Lysozyme Based on the Capture of A Fixed Thiol-aptamer on Gold Nanoparticles." <em>New Journal of Chemistry</em>, 2019, 43(11): 4531-4538. <a href="paper/lyz.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
+            </ul>
+
+            <h3 id="cv-experience" class="font-medium"><span data-lang="en">Work Experience</span><span data-lang="zh" style="display:none;">工作经验</span></h3>
+            <ul class="list-disc ml-6">
+                <li class="mb-2">
+                    <p><strong><span data-lang="en">Postdoctoral Researcher</span><span data-lang="zh" style="display:none;">博士后研究员</span></strong>, <span data-lang="en">King's College London</span>, [2024.10 – to now]<span data-lang="zh" style="display:none;">伦敦国王学院, [2024 – 至今]</span></p>
+                    <ul class="list-circle ml-6 mt-1 text-sm">
+                        <li data-lang="en">New perspectives in photocatalysis and near-surface chemistry: catalysis meets plasmonics</li>
+                        <li data-lang="zh" style="display:none;">New perspectives in photocatalysis and near-surface chemistry: catalysis meets plasmonics</li>
+                    </ul>
                 </li>
-				<li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Dongyun Tang, Hongliang Cui, Haiyan Cao. "A Competitive Colorimetric Chloramphenicol Assay Based on The Non-cross-linking Deaggregation of Gold Nanoparticles Coated with A Polyadenine-modified Aptamer." <em>Microchimica Acta</em>, 2018, 185: 1-9. <a href="paper/competive colorimetric chloramphenicol assay  deaggregation.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-                </ul>
-                <p data-lang="en" class="text-sm mt-4">For a complete list, please visit the <a href="publications.html" class="text-blue-600 hover:text-blue-800">Publications section</a>.</p>
-                <p data-lang="zh" style="display:none;" class="text-sm mt-4">如需完整列表，请访问<a href="#publications.html" class="text-blue-600 hover:text-blue-800">出版物部分</a>。</p>
-            </div>
+            </ul>
+
         </section>
-
-        <section id="contact">
-            <h2 class="font-semibold" data-lang="en">Contact</h2>
-            <h2 class="font-semibold" data-lang="zh" style="display:none;">联系方式</h2>
-            <p data-lang="en" class="mb-4">I am always open to discussing new research ideas or potential collaborations. Please feel free to reach out to me through the following channels:</p>
-            <p data-lang="zh" style="display:none;" class="mb-4">我随时乐于讨论新的研究想法或潜在合作。请通过以下方式与我联系：</p>
-
-            <div class="space-y-3">
-                <p data-lang="en"><strong>Email:</strong> <a href="mailto:your.email@example.com" class="text-blue-600 hover:text-blue-800">yuanyang.xie@kcl.ac.uk</a></p>
-                <p data-lang="zh" style="display:none;"><strong>邮箱:</strong> <a href="mailto:your.email@example.com" class="text-blue-600 hover:text-blue-800">yuanyang.xie@kcl.ac.uk</a></p>
-
-                <p data-lang="en"><strong>Office:</strong> [Department of Physics, King's College London, London, WC2R 2LS, United Kingdom]</p>
-                <p data-lang="zh" style="display:none;"><strong>办公室:</strong> [伦敦国王学院物理系，英国]</p>
-
-                <p>
-                    <span data-lang="en"><strong>Connect with me on:</strong> </span><span data-lang="zh" style="display:none;"><strong>在以下平台找到我：</strong></span>
-                    <a href="https://scholar.google.co.uk/citations?user=3EZ7dWoAAAAJ" target="_blank" class="text-blue-600 hover:text-blue-800 mr-4">Google Scholar</a>
-                    <a href="https://www.linkedin.com/in/yuanyang-xie-903316312/" target="_blank" class="text-blue-600 hover:text-blue-800 mr-4">LinkedIn</a>
-                    <a href="https://github.com/YOUR_GITHUB_ID" target="_blank" class="text-blue-600 hover:text-blue-800">GitHub</a>
-                </p>
-                <p data-lang="en">I aim to respond to emails within 2-3 business days.</p>
-                <p data-lang="zh" style="display:none;">我会在2-3个工作日内回复邮件。</p>
-            </div>
-        </section>
-    </main>
+ 
+	</main>
 
     <footer class="mt-8 text-gray-600 text-sm">
         <p data-lang="en">&copy; <span id="current-year-en"></span> Yuanyang Xie. All rights reserved.</p>
