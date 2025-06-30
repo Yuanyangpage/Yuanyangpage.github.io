@@ -264,32 +264,12 @@
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid #edf2f7;
+            display: flex; /* Use flexbox for centering content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack items vertically */
         }
-        #home .recent-publications ul {
-            max-height: 300px; /* Limit height for scroll effect */
-            overflow-y: auto; /* Enable vertical scrolling */
-            padding-right: 15px; /* Space for scrollbar */
-            margin-left: 0; /* Reset default list margin */
-            list-style: none; /* Remove default list bullets */
-        }
-        #home .recent-publications li {
-            background-color: #f0f4f8; /* Light background for each publication */
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        #home .recent-publications li:hover {
-            transform: translateY(-3px); /* Subtle lift effect on hover */
-        }
-        #home .recent-publications li p {
-            margin-bottom: 5px; /* Reduce margin for text within list item */
-        }
-        #home .recent-publications li em {
-            font-style: italic;
-            color: #6c757d;
-        }
+        /* Removed the old ul and li styles as they are replaced by the carousel */
     </style>
 </head>
 <body>
@@ -344,25 +324,57 @@
             <p data-lang="zh" style="display:none;" class="mb-4 text-lg">欢迎来到我的学术个人主页。我是<strong class="text-blue-700">博士后研究员</strong>，在<strong class="text-blue-700">伦敦国王学院</strong>工作。我的研究主要集中在<span class="font-medium">纳米表面等离激元</span>，并对<span class="font-medium">手性光子学</span>和<span class="font-medium">异质纳米结构</span>有浓厚兴趣。欢迎浏览我的工作并与我联系！</p>
 
             <div class="recent-publications">
-                <h3 class="font-medium" data-lang="en">Recent Publications</h3>
-                <h3 class="font-medium" data-lang="zh" style="display:none;">近期出版物</h3>
-                <ul>
-                <li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Alexey V. Krasavin, Diane J. Roth, Anatoly V. Zayats. "Unidirectional Chiral Scattering from Single Enantiomeric Plasmonic Plasmonic Nanoparticles." <em>Nature Communications</em>, 2025, 16(1):1125. <a href="paper/nc2025chiralscattering.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-                <li class="mb-2">
-                    <p>Anton Yu. Bykov, <strong>Yuanyang Xie</strong>,  Alexey V. Krasavin†, Anatoly V. Zayats. "Broadband Transient Response and Wavelength-Tunable Photoacoustics in Plasmonic Hetero-nanoparticles." <em>Nano Letters</em>, 2023, 23(7):2786-2791. <a href="paper/acs.nanolett.2023acoustic.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-                <li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Jiye Li, Jiangling Wu. "A Trigger-based Aggregation of Aptamer-functionalized Gold nanoparticles for Colorimetry: An Example on Detection of Escherichia Coli O157: H7." <em>Sensors and Actuators B: Chemical</em>, 2021, 339: 129865. <a href="paper/Ecoli157.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-				<li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Dongyun Tang, Hongliang Cui, Lizhu Yang, Haiyan Cao, Wen Yun. "Sensitive Colorimetric Detection for Lysozyme Based on the Capture of A Fixed Thiol-aptamer on Gold Nanoparticles." <em>New Journal of Chemistry</em>, 2019, 43(11): 4531-4538. <a href="paper/lyz.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-				<li class="mb-2">
-                    <p><strong>Yuanyang Xie</strong>, Yu Huang, Dongyun Tang, Hongliang Cui, Haiyan Cao. "A Competitive Colorimetric Chloramphenicol Assay Based on The Non-cross-linking Deaggregation of Gold Nanoparticles Coated with A Polyadenine-modified Aptamer." <em>Microchimica Acta</em>, 2018, 185: 1-9. <a href="paper/competive colorimetric chloramphenicol assay  deaggregation.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">[PDF]</a></p>
-                </li>
-                </ul>
+                <!-- 图片轮播容器 -->
+                <div class="carousel-container bg-white shadow-lg rounded-xl overflow-hidden p-4 space-y-4 mx-auto w-full max-w-xl">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-4" data-lang="en">Featured Publications</h3>
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-4" data-lang="zh" style="display:none;">精选出版物</h3>
+
+                    <div class="relative w-full rounded-lg overflow-hidden border-2 border-blue-300 p-4 bg-gray-50">
+                        <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
+                            <a id="carousel-link" href="#" target="_blank" rel="noopener noreferrer" class="block flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-gray-200 flex items-center justify-center bg-white">
+                                <img id="carousel-image" src="https://placehold.co/160x160/FFD700/000000?text=Pub1" alt="Publication Image" class="w-full h-full object-cover">
+                            </a>
+                            <div class="flex-grow text-center md:text-left">
+                                <p id="publication-title" class="text-sm font-semibold text-blue-800 mb-1"></p>
+                                <p id="publication-authors" class="text-gray-700 text-sm mb-1"></p>
+                                <p id="publication-journal" class="text-gray-600 text-xs italic mb-2"></p>
+                                <a id="publication-pdf-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    [PDF]
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Image loading error message -->
+                        <div id="image-error-message" class="absolute inset-0 bg-red-100 text-red-700 flex items-center justify-center p-4 rounded-lg hidden">
+                            图片加载失败，请检查链接。
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center space-x-4 mt-4">
+                        <button id="prev-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button id="play-pause-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-sm">
+                            <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span id="play-pause-text">暂停</span>
+                        </button>
+                        <button id="next-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
                 <p data-lang="en" class="text-sm mt-4">For a complete list, please visit the <a href="publications.html" class="text-blue-600 hover:text-blue-800">Publications section</a>.</p>
                 <p data-lang="zh" style="display:none;" class="text-sm mt-4">如需完整列表，请访问<a href="#publications.html" class="text-blue-600 hover:text-blue-800">出版物部分</a>。</p>
             </div>
@@ -385,6 +397,7 @@
                     <span data-lang="en"><strong>Connect with me on:</strong> </span><span data-lang="zh" style="display:none;"><strong>在以下平台找到我：</strong></span>
                     <a href="https://scholar.google.co.uk/citations?user=3EZ7dWoAAAAJ" target="_blank" class="text-blue-600 hover:text-blue-800 mr-4">Google Scholar</a>
                     <a href="https://www.linkedin.com/in/yuanyang-xie-903316312/" target="_blank" class="text-blue-600 hover:text-blue-800 mr-4">LinkedIn</a>
+                    <a href="https://github.com/YOUR_GITHUB_ID" target="_blank" class="text-blue-600 hover:text-blue-800">GitHub</a>
                 </p>
                 <p data-lang="en">I aim to respond to emails within 2-3 business days.</p>
                 <p data-lang="zh" style="display:none;">我会在2-3个工作日内回复邮件。</p>
@@ -537,7 +550,7 @@
             const initialHash = window.location.hash || '#home';
             // Find the main nav link that corresponds to the initial hash
             const initialActiveMainLink = document.querySelector(`nav .nav-link[href="${initialHash}"][data-lang="en"]`) ||
-                                          document.querySelector(`nav .nav-link[href="${initialHash}"][data-lang="zh"]`);
+                                         document.querySelector(`nav .nav-link[href="${initialHash}"][data-lang="zh"]`);
 
             if (initialActiveMainLink) {
                 initialActiveMainLink.classList.add('active');
@@ -552,6 +565,164 @@
                     document.querySelector('nav .nav-link[href="#home"][data-lang="en"]').classList.add('active');
                 }
             }
+
+            // --- Carousel Script Integration ---
+            // 获取DOM元素
+            const carouselImage = document.getElementById('carousel-image');
+            const carouselLink = document.getElementById('carousel-link');
+            const prevBtn = document.getElementById('prev-btn');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+            const playPauseText = document.getElementById('play-pause-text');
+            const imageErrorMessage = document.getElementById('image-error-message');
+
+            // 新增的出版物详情DOM元素
+            const publicationTitle = document.getElementById('publication-title');
+            const publicationAuthors = document.getElementById('publication-authors');
+            const publicationJournal = document.getElementById('publication-journal');
+            const publicationPdfLink = document.getElementById('publication-pdf-link');
+
+            // 出版物数据数组
+            const publications = [
+                {
+                    src: 'imageforhome/nc2025.png',
+                    title: 'Unidirectional Chiral Scattering from Single Enantiomeric Plasmonic Plasmonic Nanoparticles.',
+                    authors: 'Yuanyang Xie, Alexey V. Krasavin, Diane J. Roth, Anatoly V. Zayats.',
+                    journal: 'Nature Communications, 2025, 16(1):1125.',
+                    link: 'paper/nc2025chiralscattering.pdf'
+                },
+                {
+                    src: 'imageforhome/nl2023.png',
+                    title: 'Broadband Transient Response and Wavelength-Tunable Photoacoustics in Plasmonic Hetero-nanoparticles.',
+                    authors: 'Anton Yu. Bykov, Yuanyang Xie, Alexey V. Krasavin†, Anatoly V. Zayats.',
+                    journal: 'Nano Letters, 2023, 23(7):2786-2791.',
+                    link: 'paper/acs.nanolett.2023acoustic.pdf'
+                },
+                {
+                    src: 'imageforhome/SAB2021.png',
+                    title: 'A Trigger-based Aggregation of Aptamer-functionalized Gold nanoparticles for Colorimetry: An Example on Detection of Escherichia Coli O157: H7.',
+                    authors: 'Yuanyang Xie, Yu Huang, Jiye Li, Jiangling Wu.',
+                    journal: 'Sensors and Actuators B: Chemical, 2021, 339: 129865.',
+                    link: 'paper/Ecoli157.pdf'
+                },
+                {
+                    src: 'imageforhome/NJC2019.png',
+                    title: 'Sensitive Colorimetric Detection for Lysozyme Based on the Capture of A Fixed Thiol-aptamer on Gold Nanoparticles.',
+                    authors: 'Yuanyang Xie, Yu Huang, Dongyun Tang, Hongliang Cui, Lizhu Yang, Haiyan Cao, Wen Yun.',
+                    journal: 'New Journal of Chemistry, 2019, 43(11): 4531-4538.',
+                    link: 'paper/lyz.pdf'
+                },
+                {
+                    src: 'imageforhome/MA2018.png',
+                    title: 'A Competitive Colorimetric Chloramphenicol Assay Based on The Non-cross-linking Deaggregation of Gold Nanoparticles Coated with A Polyadenine-modified Aptamer.',
+                    authors: 'Yuanyang Xie, Yu Huang, Dongyun Tang, Hongliang Cui, Haiyan Cao.',
+                    journal: 'Microchimica Acta, 2018, 185: 1-9.',
+                    link: 'paper/competive colorimetric chloramphenicol assay deaggregation.pdf'
+                }
+            ];
+
+            let currentIndex = 0; // 当前出版物索引
+            let autoplayInterval; // 自动播放的定时器ID
+            let isPlaying = true; // 播放状态
+
+            /**
+             * 显示指定索引的出版物详情
+             * @param {number} index - 要显示的出版物索引
+             */
+            function showPublication(index) {
+                imageErrorMessage.classList.add('hidden');
+
+                const publication = publications[index];
+                if (publication) {
+                    carouselImage.src = publication.src;
+                    carouselImage.alt = publication.title;
+                    carouselLink.href = publication.link; // 图片本身的链接
+
+                    publicationTitle.textContent = publication.title;
+                    publicationAuthors.textContent = publication.authors;
+                    publicationJournal.textContent = publication.journal;
+                    publicationPdfLink.href = publication.link; // PDF链接
+
+                    carouselImage.onerror = () => {
+                        imageErrorMessage.classList.remove('hidden');
+                        console.error(`图片加载失败: ${publication.src}`);
+                    };
+                    carouselImage.onload = () => {
+                        imageErrorMessage.classList.add('hidden');
+                    };
+                }
+            }
+
+            /**
+             * 切换到下一篇出版物
+             */
+            function nextPublication() {
+                currentIndex = (currentIndex + 1) % publications.length;
+                showPublication(currentIndex);
+            }
+
+            /**
+             * 切换到上一篇出版物
+             */
+            function prevPublication() {
+                currentIndex = (currentIndex - 1 + publications.length) % publications.length;
+                showPublication(currentIndex);
+            }
+
+            /**
+             * 启动自动播放
+             */
+            function startAutoplay() {
+                if (!autoplayInterval) { // 避免重复启动
+                    autoplayInterval = setInterval(nextPublication, 2000); // 每2秒切换一次
+                    isPlaying = true;
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                    playPauseText.textContent = '暂停';
+                }
+            }
+
+            /**
+             * 停止自动播放
+             */
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null; // 清除定时器ID
+                isPlaying = false;
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                playPauseText.textContent = '播放';
+            }
+
+            /**
+             * 切换播放/暂停状态
+             */
+            function toggleAutoplay() {
+                if (isPlaying) {
+                    stopAutoplay();
+                } else {
+                    startAutoplay();
+                }
+            }
+
+            // 事件监听器
+            prevBtn.addEventListener('click', () => {
+                stopAutoplay(); // 手动操作时暂停自动播放
+                prevPublication();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                stopAutoplay(); // 手动操作时暂停自动播放
+                nextPublication();
+            });
+
+            playPauseBtn.addEventListener('click', toggleAutoplay);
+
+            // 页面加载完成后初始化轮播
+            showPublication(currentIndex); // 显示第一篇出版物
+            startAutoplay(); // 启动自动播放
         });
     </script>
 </body>
