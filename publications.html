@@ -495,19 +495,30 @@
             });
 
             // Smooth scrolling for navigation links (main and dropdown)
+            let pendingSectionHash = window.location.hash;
+
+            function scrollToSection(targetId, updateHash = false) {
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                if (updateHash) {
+                    history.replaceState(null, '', targetId);
+                }
+            }
+
             document.querySelectorAll('nav a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     // Prevent default anchor click behavior only for internal links
                     if (this.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
                         const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start' // Scroll to the top of the section
-                            });
-                        }
+                        pendingSectionHash = targetId;
+                        scrollToSection(targetId, true);
 
                         // Close dropdown after clicking a link within it (optional, but good UX)
                         const parentDropdown = this.closest('.dropdown-menu');
@@ -580,6 +591,10 @@
                         </div>
                     `;
                         }).join('');
+
+                    if (pendingSectionHash) {
+                        requestAnimationFrame(() => scrollToSection(pendingSectionHash));
+                    }
                 } catch (error) {
                     console.error(error);
                     container.innerHTML = '<p class="text-red-700">Publication data could not be loaded.</p>';
