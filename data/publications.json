@@ -1,29 +1,20 @@
 [
   {
-    "id": "meso2025",
-    "title": "Meso-chiral optical properties of plasmonic nanoparticles: uncovering hidden chirality",
-    "authors": "Yuanyang Xie, Alexey V. Krasavin, Anatoly V. Zayats",
-    "journal": "Nanophotonics",
-    "details": "2025, 14(25), 4479-4485",
-    "year": 2025,
-    "doi": "",
-    "pdf": "paper/meso2025_nanoph-2025-0365.pdf",
-    "thumbnail": "images/publications/meso2025.png",
+    "id": "reductioncontrolledtunable2026",
+    "title": "Reduction‐Controlled Tunable Synthesis of Covellite (CuS) Nanoparticles from Water‐Soluble Single‐Source Precursors",
+    "authors": "Xiang Xu, Siqiao Huang, Desmond A. Koomson, Tannith‐Jade Cole, Yuanyang Xie, Jagodish C. Sarker, David Pugh, Cécile A. Dreiss, Graeme Hogarth",
+    "journal": "Small",
+    "details": "2026, 22(27), e14339",
+    "year": 2026,
+    "doi": "10.1002/smll.202514339",
+    "pdf": "paper/small2026.pdf",
+    "thumbnail": "images/publications/reductioncontrolledtunable2026.png",
     "featured": true,
-    "keywords": ["meso-chirality", "plasmonic nanoparticles", "hidden chirality"]
-  },
-  {
-    "id": "angew2025",
-    "title": "Self-Assembled Polypseudorotaxanes Crosslinked by Dynamic Disulfide Bonds as Modular Functionalization for Thiophilic Metal Nanoparticles",
-    "authors": "Xiang Xu, Bing Zan, Yuanyang Xie, Pornpilat Akapan, Marcelo da Silva, Miao Zhao, Erol Hasan, Aliaksandra Rakovich, Driton Vllasaliu, Gregory N. Smith, Gustavo Gonzalez-Gaitano, Graeme Hogarth, Cecile A. Dreiss",
-    "journal": "Angewandte Chemie International Edition",
-    "details": "2025, e202515585",
-    "year": 2025,
-    "doi": "",
-    "pdf": "paper/Angew2025.pdf",
-    "thumbnail": "images/publications/angew2025.png",
-    "featured": true,
-    "keywords": ["self-assembly", "disulfide bonds", "metal nanoparticles"]
+    "keywords": [
+      "reduction",
+      "controlled",
+      "tunable"
+    ]
   },
   {
     "id": "nc2025",
@@ -36,7 +27,45 @@
     "pdf": "paper/nc2025chiralscattering.pdf",
     "thumbnail": "images/publications/nc2025.png",
     "featured": true,
-    "keywords": ["chiral scattering", "single nanoparticles", "plasmonics"]
+    "keywords": [
+      "chiral scattering",
+      "single nanoparticles",
+      "plasmonics"
+    ]
+  },
+  {
+    "id": "angew2025",
+    "title": "Self-Assembled Polypseudorotaxanes Crosslinked by Dynamic Disulfide Bonds as Modular Functionalization for Thiophilic Metal Nanoparticles",
+    "authors": "Xiang Xu, Bing Zan, Yuanyang Xie, Pornpilat Akapan, Marcelo da Silva, Miao Zhao, Erol Hasan, Aliaksandra Rakovich, Driton Vllasaliu, Gregory N. Smith, Gustavo Gonzalez-Gaitano, Graeme Hogarth, Cecile A. Dreiss",
+    "journal": "Angewandte Chemie International Edition",
+    "details": "2025, e202515585",
+    "year": 2025,
+    "doi": "",
+    "pdf": "paper/Angew2025.pdf",
+    "thumbnail": "images/publications/angew2025.png",
+    "featured": true,
+    "keywords": [
+      "self-assembly",
+      "disulfide bonds",
+      "metal nanoparticles"
+    ]
+  },
+  {
+    "id": "meso2025",
+    "title": "Meso-chiral optical properties of plasmonic nanoparticles: uncovering hidden chirality",
+    "authors": "Yuanyang Xie, Alexey V. Krasavin, Anatoly V. Zayats",
+    "journal": "Nanophotonics",
+    "details": "2025, 14(25), 4479-4485",
+    "year": 2025,
+    "doi": "",
+    "pdf": "paper/meso2025_nanoph-2025-0365.pdf",
+    "thumbnail": "images/publications/meso2025.png",
+    "featured": true,
+    "keywords": [
+      "meso-chirality",
+      "plasmonic nanoparticles",
+      "hidden chirality"
+    ]
   },
   {
     "id": "nl2023",
@@ -49,20 +78,11 @@
     "pdf": "paper/acs.nanolett.2023acoustic.pdf",
     "thumbnail": "images/publications/nl2023.png",
     "featured": true,
-    "keywords": ["photoacoustics", "hetero-nanoparticles", "transient response"]
-  },
-  {
-    "id": "sab2021",
-    "title": "A Trigger-based Aggregation of Aptamer-functionalized Gold nanoparticles for Colorimetry: An Example on Detection of Escherichia Coli O157:H7",
-    "authors": "Yuanyang Xie, Yu Huang, Jiye Li, Jiangling Wu",
-    "journal": "Sensors and Actuators B: Chemical",
-    "details": "2021, 339:129865",
-    "year": 2021,
-    "doi": "",
-    "pdf": "paper/Ecoli157.pdf",
-    "thumbnail": "images/publications/sab2021.png",
-    "featured": true,
-    "keywords": ["aptamer", "gold nanoparticles", "E. coli detection"]
+    "keywords": [
+      "photoacoustics",
+      "hetero-nanoparticles",
+      "transient response"
+    ]
   },
   {
     "id": "jics2021",
@@ -75,7 +95,28 @@
     "pdf": "paper/s13738-021-02182-3.pdf",
     "thumbnail": "images/publications/jics2021.png",
     "featured": false,
-    "keywords": ["pH", "aptamer sensor", "gold nanoparticles"]
+    "keywords": [
+      "pH",
+      "aptamer sensor",
+      "gold nanoparticles"
+    ]
+  },
+  {
+    "id": "sab2021",
+    "title": "A Trigger-based Aggregation of Aptamer-functionalized Gold nanoparticles for Colorimetry: An Example on Detection of Escherichia Coli O157:H7",
+    "authors": "Yuanyang Xie, Yu Huang, Jiye Li, Jiangling Wu",
+    "journal": "Sensors and Actuators B: Chemical",
+    "details": "2021, 339:129865",
+    "year": 2021,
+    "doi": "",
+    "pdf": "paper/Ecoli157.pdf",
+    "thumbnail": "images/publications/sab2021.png",
+    "featured": true,
+    "keywords": [
+      "aptamer",
+      "gold nanoparticles",
+      "E. coli detection"
+    ]
   },
   {
     "id": "njc2019",
@@ -88,20 +129,11 @@
     "pdf": "paper/lyz.pdf",
     "thumbnail": "images/publications/njc2019.png",
     "featured": true,
-    "keywords": ["lysozyme", "thiol-aptamer", "colorimetric detection"]
-  },
-  {
-    "id": "ma2018",
-    "title": "A Competitive Colorimetric Chloramphenicol Assay Based on The Non-cross-linking Deaggregation of Gold Nanoparticles Coated with A Polyadenine-modified Aptamer",
-    "authors": "Yuanyang Xie, Yu Huang, Dongyun Tang, Hongliang Cui, Haiyan Cao",
-    "journal": "Microchimica Acta",
-    "details": "2018, 185:1-9",
-    "year": 2018,
-    "doi": "",
-    "pdf": "paper/competive colorimetric chloramphenicol assay  deaggregation.pdf",
-    "thumbnail": "images/publications/ma2018.png",
-    "featured": true,
-    "keywords": ["chloramphenicol", "deaggregation", "aptamer"]
+    "keywords": [
+      "lysozyme",
+      "thiol-aptamer",
+      "colorimetric detection"
+    ]
   },
   {
     "id": "rsc2018",
@@ -114,7 +146,11 @@
     "pdf": "paper/MoS2 NPs colorimetric detection of H2O2 and glucose.pdf",
     "thumbnail": "images/publications/rsc2018.png",
     "featured": false,
-    "keywords": ["MoS2", "peroxidase mimetics", "glucose detection"]
+    "keywords": [
+      "MoS2",
+      "peroxidase mimetics",
+      "glucose detection"
+    ]
   },
   {
     "id": "analyst2018",
@@ -127,6 +163,27 @@
     "pdf": "paper/analyst2018.pdf",
     "thumbnail": "images/publications/analyst2018.png",
     "featured": false,
-    "keywords": ["graphene oxide", "MoS2 quantum dots", "fluorescent probe"]
+    "keywords": [
+      "graphene oxide",
+      "MoS2 quantum dots",
+      "fluorescent probe"
+    ]
+  },
+  {
+    "id": "ma2018",
+    "title": "A Competitive Colorimetric Chloramphenicol Assay Based on The Non-cross-linking Deaggregation of Gold Nanoparticles Coated with A Polyadenine-modified Aptamer",
+    "authors": "Yuanyang Xie, Yu Huang, Dongyun Tang, Hongliang Cui, Haiyan Cao",
+    "journal": "Microchimica Acta",
+    "details": "2018, 185:1-9",
+    "year": 2018,
+    "doi": "",
+    "pdf": "paper/competive colorimetric chloramphenicol assay  deaggregation.pdf",
+    "thumbnail": "images/publications/ma2018.png",
+    "featured": true,
+    "keywords": [
+      "chloramphenicol",
+      "deaggregation",
+      "aptamer"
+    ]
   }
 ]
