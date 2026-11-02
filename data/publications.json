@@ -1,22 +1,5 @@
 [
   {
-    "id": "reductioncontrolledtunable2026",
-    "title": "Reduction‐Controlled Tunable Synthesis of Covellite (CuS) Nanoparticles from Water‐Soluble Single‐Source Precursors",
-    "authors": "Xiang Xu, Siqiao Huang, Desmond A. Koomson, Tannith‐Jade Cole, Yuanyang Xie, Jagodish C. Sarker, David Pugh, Cécile A. Dreiss, Graeme Hogarth",
-    "journal": "Small",
-    "details": "2026, 22(27), e14339",
-    "year": 2026,
-    "doi": "10.1002/smll.202514339",
-    "pdf": "paper/small2026.pdf",
-    "thumbnail": "images/publications/reductioncontrolledtunable2026.jpg",
-    "featured": true,
-    "keywords": [
-      "reduction",
-      "controlled",
-      "tunable"
-    ]
-  },
-  {
     "id": "electricallydrivenchiral2026",
     "title": "Electrically driven chiral emission from plasmonic tunnel junctions",
     "authors": "Yuanyang Xie, Alexey V. Krasavin, Anatoly V. Zayats",
@@ -31,6 +14,23 @@
       "electrically",
       "driven",
       "chiral"
+    ]
+  },
+  {
+    "id": "reductioncontrolledtunable2026",
+    "title": "Reduction‐Controlled Tunable Synthesis of Covellite (CuS) Nanoparticles from Water‐Soluble Single‐Source Precursors",
+    "authors": "Xiang Xu, Siqiao Huang, Desmond A. Koomson, Tannith‐Jade Cole, Yuanyang Xie, Jagodish C. Sarker, David Pugh, Cécile A. Dreiss, Graeme Hogarth",
+    "journal": "Small",
+    "details": "2026, 22(27), e14339",
+    "year": 2026,
+    "doi": "10.1002/smll.202514339",
+    "pdf": "paper/small2026.pdf",
+    "thumbnail": "images/publications/reductioncontrolledtunable2026.jpg",
+    "featured": true,
+    "keywords": [
+      "reduction",
+      "controlled",
+      "tunable"
     ]
   },
   {
